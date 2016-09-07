@@ -1,0 +1,422 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Running the Proxy Server · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+<style>
+.book-summary {
+  background-color:#13262f;
+  border-left-color: #344047;
+}
+
+.book-summary ul.summary li a,
+.book-summary ul.summary li span {
+	color: #FFF;
+}
+
+.book-summary ul.summary li.active > a {
+	color: #6c9ed0;
+}
+
+.book-header {
+	color: #7e888b;
+	background-color: rgb(245, 245, 245);
+}
+
+.book-body {
+	background-color: #fafafa;
+}
+
+.markdown-section pre {
+	line-height: 1;
+	border: 1px solid #d8d6d6;
+}
+
+.page-inner h1,
+.page-inner h2,
+.page-inner h3,
+.page-inner h4,
+.page-inner h5,
+.page-inner h6 {
+	color: #098BCC;
+	font-weight:300;
+}
+
+#book-search-input {
+	color: rgb(54, 65, 73);
+	background-color: #2b3a42;
+}
+
+#book-search-input input, #book-search-input input:hover, #book-search-input input:focus {
+	color: #909394 !important;
+}
+
+</style>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Getting Started</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="running-the-proxy-server.html">
+            
+                <a href="running-the-proxy-server.html#running-the-proxy-server">
+            
+                    
+                    Running the Proxy Server
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="running-the-proxy-server.html">
+            
+                <a href="running-the-proxy-server.html#create-a-new-proxy">
+            
+                    
+                    Create a New Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="running-the-proxy-server.html">
+            
+                <a href="running-the-proxy-server.html#get-a-list-of-proxies">
+            
+                    
+                    Get a List of Proxies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="running-the-proxy-server.html">
+            
+                <a href="running-the-proxy-server.html#override-normal-dns-lookups">
+            
+                    
+                    Override Normal DNS Lookups
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="running-the-proxy-server.html">
+            
+                <a href="running-the-proxy-server.html#expose-proxy-server-port">
+            
+                    
+                    Expose Proxy Server Port
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="running-the-proxy-server.html">
+            
+                <a href="running-the-proxy-server.html#link-with-other-containers">
+            
+                    
+                    Link With Other Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="running-the-proxy-server.html">
+            
+                <a href="running-the-proxy-server.html#proxy-server-container-shell">
+            
+                    
+                    Proxy Server Container Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="running-the-proxy-server.html">
+            
+                <a href="running-the-proxy-server.html#retrieve-or-follow-logs">
+            
+                    
+                    Retrieve or Follow Logs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Running the Proxy Server</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="introduction">Introduction</h1><p><a href="https://bmp.lightbody.net/" target="_blank">BrowserMob Proxy</a> exposes a RESTful API which can be consumed by your application, you can read further in their official page.</p><h1 id="running-the-proxy-server">Running the Proxy Server</h1><pre><code class="lang-bash">$ athena proxy start
+...
+
+[INFO] Starting proxy server ...</code></pre>
+<h1 id="create-a-new-proxy">Create a New Proxy</h1><pre><code class="lang-bash">$ athena proxy proxy create
+...
+
+{
+  <span class="hljs-string">&quot;port&quot;</span>: 9092
+}</code></pre>
+<h1 id="get-a-list-of-proxies">Get a List of Proxies</h1><pre><code class="lang-bash">$ athena proxy proxy list
+...
+
+{
+  <span class="hljs-string">&quot;proxyList&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;port&quot;</span>: 9092
+    },
+    {
+      <span class="hljs-string">&quot;port&quot;</span>: 9091
+    }
+  ]
+}</code></pre>
+<h1 id="override-normal-dns-lookups">Override Normal DNS Lookups</h1><pre><code class="lang-bash">$ <span class="hljs-comment"># e.g. Remap google.com to 127.0.0.1 IP Address</span>
+$ athena proxy hosts 9001 google.com 127.0.0.1</code></pre>
+<h1 id="expose-proxy-server-port">Expose Proxy Server Port</h1><pre><code class="lang-bash">$ <span class="hljs-comment"># e.g. Start proxy with port published externally at 5001</span>
+$ athena proxy start --port=5001
+...
+
+[INFO] Starting proxy server at port 5001...</code></pre>
+<h1 id="link-with-other-containers">Link With Other Containers</h1><pre><code class="lang-bash"><span class="hljs-comment"># e.g You can link the proxy server with your selenium grid</span>
+$ athena proxy start --link=&lt;container_name&gt;:&lt;<span class="hljs-built_in">alias</span>&gt;</code></pre>
+<h1 id="proxy-server-container-shell">Proxy Server Container Shell</h1><pre><code class="lang-bash">$ athena proxy start terminal
+...
+
+[INFO] Placing you inside a terminal...
+root@f4a74ec293ed:/<span class="hljs-comment">#</span></code></pre>
+<h1 id="retrieve-or-follow-logs">Retrieve or Follow Logs</h1><pre><code class="lang-bash">$ athena proxy logs
+...
+
+[INFO] Showing proxy server logs...
+Running BrowserMob Proxy using LittleProxy implementation. To revert to the legacy implementation, run the proxy with the <span class="hljs-built_in">command</span>-line option <span class="hljs-string">&apos;--use-littleproxy false&apos;</span>.
+[INFO  2016-09-07T18:30:39,864 net.lightbody.bmp.proxy.Main] (main) Starting BrowserMob Proxy version 2.1.2 
+[INFO  2016-09-07T18:30:39,990 org.eclipse.jetty.util.log] (main) jetty-7.x.y-SNAPSHOT 
+[INFO  2016-09-07T18:30:40,035 org.eclipse.jetty.util.log] (main) started o.e.j.s.ServletContextHandler{/,null} 
+[INFO  2016-09-07T18:30:40,821 org.eclipse.jetty.util.log] (main) Started SelectChannelConnector@0.0.0.0:9090 </code></pre>
+<p>You can also follow the logs output</p><pre><code class="lang-bash">$ athena proxy logs <span class="hljs-_">-f</span></code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="running-the-proxy-server.html#create-a-new-proxy" class="navigation navigation-next " aria-label="Next page: Create a New Proxy">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Running the Proxy Server","level":"1.2","depth":1,"next":{"title":"Create a New Proxy","level":"1.2.1","depth":2,"anchor":"#create-a-new-proxy","path":"getting-started/running-the-proxy-server.md","ref":"getting-started/running-the-proxy-server.md#create-a-new-proxy","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"getting-started/running-the-proxy-server.md","mtime":"2016-09-07T18:40:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-07T18:41:08.217Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
