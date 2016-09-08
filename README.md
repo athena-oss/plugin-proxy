@@ -17,7 +17,7 @@ $ athena plugins install proxy https://github.com/athena-oss/plugin-proxy.git
 ### On MAC OSX Use [Homebrew](http://brew.sh/):
 
 ```bash
-$ brew tap athena-oss/plugin-proxy
+$ brew tap athena-oss/tap
 $ brew install plugin-proxy
 ```
 
