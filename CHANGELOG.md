@@ -1,3 +1,9 @@
+## 0.4.0 (November 9, 2016)
+
+### Added
+
+- Add option to connect with athena network
+
 ## 0.3.1 (September 9, 2016)
 
 ### Changed
