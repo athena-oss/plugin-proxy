@@ -8,17 +8,29 @@ You can easily use this plugin in your local development machine, or in a CI/CD 
 
 ## How to Install ?
 
-To install it simply run the following command :
+**On Linux**
+
+* Using `apt-get` :
 
 ```bash
-$ athena plugins install proxy https://github.com/athena-oss/plugin-proxy.git
+$ sudo add-apt-repository ppa:athena-oss/athena
+$ sudo apt-get update
+$ sudo apt-get install athena-plugin-proxy
 ```
 
-### On MAC OSX Use [Homebrew](http://brew.sh/):
+**On MAC OSX**
+
+* Using [Homebrew](http://brew.sh/) :
 
 ```bash
 $ brew tap athena-oss/tap
 $ brew install plugin-proxy
+```
+
+**Alternative**
+
+```bash
+$ athena plugins install proxy https://github.com/athena-oss/plugin-proxy.git
 ```
 
 Read the [Documentation](http://athena-oss.github.io/plugin-proxy) on using Athena.
