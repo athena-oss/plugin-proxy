@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Running the Proxy Server · GitBook</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Running the Proxy Server · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
         
@@ -293,17 +293,24 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1><p><a href="https://bmp.lightbody.net/" target="_blank">BrowserMob Proxy</a> exposes a RESTful API which can be consumed by your application, you can read further in their official page.</p><h1 id="running-the-proxy-server">Running the Proxy Server</h1><pre><code class="lang-bash">$ athena proxy start
+                                <h1 id="introduction">Introduction</h1>
+<p><a href="https://bmp.lightbody.net/" target="_blank">BrowserMob Proxy</a> exposes a RESTful API which can be consumed by your application, you can read further in their official page.</p>
+<h1 id="running-the-proxy-server">Running the Proxy Server</h1>
+<pre><code class="lang-bash">$ athena proxy start
 ...
 
-[INFO] Starting proxy server ...</code></pre>
-<h1 id="create-a-new-proxy">Create a New Proxy</h1><pre><code class="lang-bash">$ athena proxy proxy create
+[INFO] Starting proxy server ...
+</code></pre>
+<h1 id="create-a-new-proxy">Create a New Proxy</h1>
+<pre><code class="lang-bash">$ athena proxy proxy create
 ...
 
 {
   <span class="hljs-string">&quot;port&quot;</span>: 9092
-}</code></pre>
-<h1 id="get-a-list-of-proxies">Get a List of Proxies</h1><pre><code class="lang-bash">$ athena proxy proxy list
+}
+</code></pre>
+<h1 id="get-a-list-of-proxies">Get a List of Proxies</h1>
+<pre><code class="lang-bash">$ athena proxy proxy list
 ...
 
 {
@@ -315,22 +322,32 @@
       <span class="hljs-string">&quot;port&quot;</span>: 9091
     }
   ]
-}</code></pre>
-<h1 id="override-normal-dns-lookups">Override Normal DNS Lookups</h1><pre><code class="lang-bash">$ <span class="hljs-comment"># e.g. Remap google.com to 127.0.0.1 IP Address</span>
-$ athena proxy hosts 9001 google.com 127.0.0.1</code></pre>
-<h1 id="expose-proxy-server-port">Expose Proxy Server Port</h1><pre><code class="lang-bash">$ <span class="hljs-comment"># e.g. Start proxy with port published externally at 5001</span>
+}
+</code></pre>
+<h1 id="override-normal-dns-lookups">Override Normal DNS Lookups</h1>
+<pre><code class="lang-bash">$ <span class="hljs-comment"># e.g. Remap google.com to 127.0.0.1 IP Address</span>
+$ athena proxy hosts 9001 google.com 127.0.0.1
+</code></pre>
+<h1 id="expose-proxy-server-port">Expose Proxy Server Port</h1>
+<pre><code class="lang-bash">$ <span class="hljs-comment"># e.g. Start proxy with port published externally at 5001</span>
 $ athena proxy start --port=5001
 ...
 
-[INFO] Starting proxy server at port 5001...</code></pre>
-<h1 id="link-with-other-containers">Link With Other Containers</h1><pre><code class="lang-bash"><span class="hljs-comment"># e.g You can link the proxy server with your selenium grid</span>
-$ athena proxy start --link=&lt;container_name&gt;:&lt;<span class="hljs-built_in">alias</span>&gt;</code></pre>
-<h1 id="proxy-server-container-shell">Proxy Server Container Shell</h1><pre><code class="lang-bash">$ athena proxy start terminal
+[INFO] Starting proxy server at port 5001...
+</code></pre>
+<h1 id="link-with-other-containers">Link With Other Containers</h1>
+<pre><code class="lang-bash"><span class="hljs-comment"># e.g You can link the proxy server with your selenium grid</span>
+$ athena proxy start --link=&lt;container_name&gt;:&lt;<span class="hljs-built_in">alias</span>&gt;
+</code></pre>
+<h1 id="proxy-server-container-shell">Proxy Server Container Shell</h1>
+<pre><code class="lang-bash">$ athena proxy start terminal
 ...
 
 [INFO] Placing you inside a terminal...
-root@f4a74ec293ed:/<span class="hljs-comment">#</span></code></pre>
-<h1 id="retrieve-or-follow-logs">Retrieve or Follow Logs</h1><pre><code class="lang-bash">$ athena proxy logs
+root@f4a74ec293ed:/<span class="hljs-comment">#</span>
+</code></pre>
+<h1 id="retrieve-or-follow-logs">Retrieve or Follow Logs</h1>
+<pre><code class="lang-bash">$ athena proxy logs
 ...
 
 [INFO] Showing proxy server logs...
@@ -338,8 +355,11 @@ Running BrowserMob Proxy using LittleProxy implementation. To revert to the lega
 [INFO  2016-09-07T18:30:39,864 net.lightbody.bmp.proxy.Main] (main) Starting BrowserMob Proxy version 2.1.2 
 [INFO  2016-09-07T18:30:39,990 org.eclipse.jetty.util.log] (main) jetty-7.x.y-SNAPSHOT 
 [INFO  2016-09-07T18:30:40,035 org.eclipse.jetty.util.log] (main) started o.e.j.s.ServletContextHandler{/,null} 
-[INFO  2016-09-07T18:30:40,821 org.eclipse.jetty.util.log] (main) Started SelectChannelConnector@0.0.0.0:9090 </code></pre>
-<p>You can also follow the logs output</p><pre><code class="lang-bash">$ athena proxy logs <span class="hljs-_">-f</span></code></pre>
+[INFO  2016-09-07T18:30:40,821 org.eclipse.jetty.util.log] (main) Started SelectChannelConnector@0.0.0.0:9090
+</code></pre>
+<p>You can also follow the logs output</p>
+<pre><code class="lang-bash">$ athena proxy logs <span class="hljs-_">-f</span>
+</code></pre>
 
                                 
                                 </section>
@@ -383,7 +403,7 @@ Running BrowserMob Proxy using LittleProxy implementation. To revert to the lega
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Running the Proxy Server","level":"1.2","depth":1,"next":{"title":"Create a New Proxy","level":"1.2.1","depth":2,"anchor":"#create-a-new-proxy","path":"getting-started/running-the-proxy-server.md","ref":"getting-started/running-the-proxy-server.md#create-a-new-proxy","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"getting-started/running-the-proxy-server.md","mtime":"2016-09-09T13:47:12.880Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-09T13:48:17.041Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Running the Proxy Server","level":"1.2","depth":1,"next":{"title":"Create a New Proxy","level":"1.2.1","depth":2,"anchor":"#create-a-new-proxy","path":"getting-started/running-the-proxy-server.md","ref":"getting-started/running-the-proxy-server.md#create-a-new-proxy","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"getting-started/running-the-proxy-server.md","mtime":"2016-11-30T08:59:59.586Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-30T09:00:56.231Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
