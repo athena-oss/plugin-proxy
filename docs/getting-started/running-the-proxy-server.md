@@ -67,7 +67,7 @@ $ athena proxy start --link=<container_name>:<alias>
 # Proxy Server Container Shell
 
 ```bash
-$ athena proxy start terminal
+$ athena proxy terminal
 ...
 
 [INFO] Placing you inside a terminal...
