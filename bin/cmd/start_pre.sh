@@ -20,5 +20,8 @@ athena.info "Starting proxy server $msg..."
 args=()
 athena.argument.get_arguments "args"
 athena.docker.add_daemon
-athena.docker.add_option "${args[*]}"
-athena.pop_args ${#args}
+
+if [ "${#args[*]}" -gt 0 ]; then
+	athena.docker.add_option "${args[@]}"
+	athena.pop_args ${#args[*]}
+fi
