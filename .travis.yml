@@ -6,7 +6,7 @@ services:
 before_install:
    - npm install -g gitbook-cli
 script:
-   - export ATHENA_RELEASE="0.5.0"
+   - export ATHENA_RELEASE="0.10.2"
    - wget -O "$HOME/athena.tar.gz" "https://github.com/athena-oss/athena/archive/v${ATHENA_RELEASE}.tar.gz" && tar -v -C "$HOME" -xzf "$HOME/athena.tar.gz" && mv "$HOME/athena-${ATHENA_RELEASE}" "$HOME/athena"
    - ln -s "$TRAVIS_BUILD_DIR" "$HOME/athena/plugins/proxy" && touch $HOME/athena/plugins/base/athena.lock
    - $HOME/athena/athena cli tests/
