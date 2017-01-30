@@ -1,3 +1,8 @@
+## 0.3.2 (January 30, 2017)
+
+### Changed
+- handle "no-arguments" correctly
+
 ## 0.3.1 (September 9, 2016)
 
 ### Changed
