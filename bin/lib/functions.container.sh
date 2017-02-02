@@ -5,7 +5,7 @@ function athena.plugins.proxy.curl()
 
 function athena.plugins.proxy.start()
 {
-	$BROWSERMOBPROXY_HOME/bin/browsermob-proxy $JAVA_OPTS -port $BROWSERMOBPROXY_PORT -proxyPortRange $BROWSERMOBPROXY_PORT_RANGE &
+	$BROWSERMOBPROXY_HOME/bin/browsermob-proxy $EXTRA_PROXY_OPTS -port $BROWSERMOBPROXY_PORT -proxyPortRange $BROWSERMOBPROXY_PORT_RANGE &
 	BROWSERMOB_PID=$!
 
 	trap athena.plugins.proxy.stop SIGTERM SIGINT
