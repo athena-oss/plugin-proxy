@@ -1,17 +1,22 @@
 language: node_js
 node_js:
-   - stable
+- stable
 services:
-   - docker
+- docker
 before_install:
-   - npm install -g gitbook-cli
+- npm install -g gitbook-cli
+- mkdir -p /opt/athena
+- wget -qO- "https://github.com/athena-oss/athena/archive/v0.10.3.tar.gz" | tar --strip-components 1 -zx -C "/opt/athena"
+- ln -s "$TRAVIS_BUILD_DIR" "/opt/athena/plugins/proxy"
+- touch /opt/athena/plugins/base/athena.lock
+- export PATH=$PATH:/opt/athena
+- mkdir -p /opt/bashunit
+- wget -qO- "https://github.com/athena-oss/bashunit/archive/v0.3.2.tar.gz" | tar --strip-components 1 -zx -C "/opt/bashunit"
+- export PATH=$PATH:/opt/bashunit
 script:
-   - export ATHENA_RELEASE="0.10.2"
-   - wget -O "$HOME/athena.tar.gz" "https://github.com/athena-oss/athena/archive/v${ATHENA_RELEASE}.tar.gz" && tar -v -C "$HOME" -xzf "$HOME/athena.tar.gz" && mv "$HOME/athena-${ATHENA_RELEASE}" "$HOME/athena"
-   - ln -s "$TRAVIS_BUILD_DIR" "$HOME/athena/plugins/proxy" && touch $HOME/athena/plugins/base/athena.lock
-   - $HOME/athena/athena cli tests/
+- ATHENA_DIR="/opt/athena" bashunit tests/
 after_success:
-   - docs/publish_docs
+- docs/publish_docs
 cache:
    directories:
       - $(npm config get prefix)/bin/gitbook
